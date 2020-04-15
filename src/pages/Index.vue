@@ -1,25 +1,40 @@
 <template>
   <Layout>
+    <div class="container">
+      <g-image class="item-a" alt="Example image" src="http://placekitten.com/100/100" width="135" />
+      <p class="item-b">Blog osobisty Karola</p>
+      <p class="item-c"><em>Nie karoluj mi tu teraz!</em></p>
+    </div>
 
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
+    <section class="posts">
+      <PostList v-for="edge in $page.allPost.edges" :key="edge.node.id" :post="edge.node" />
+    </section>
 
   </Layout>
 </template>
 
+<page-query>
+query {
+  allPost {
+    edges {
+      node {
+        path
+        title
+        content
+      }
+    }
+  }
+}
+</page-query>
+
 <script>
+  import PostList from "~/components/PostList";
+
 export default {
+  components: {
+    PostList
+  },
+
   metaInfo: {
     title: 'Hello, world!'
   }
@@ -30,4 +45,31 @@ export default {
 .home-links a {
   margin-right: 1rem;
 }
+
+  .container {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .item-a {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .item-b {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .item-c {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
 </style>
