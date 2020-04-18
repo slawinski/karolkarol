@@ -21,6 +21,8 @@ query {
         path
         title
         content
+        description
+        date (format: "D MMMM YYYY")
       }
     }
   }
