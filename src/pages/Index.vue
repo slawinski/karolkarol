@@ -50,8 +50,9 @@ export default {
 
   .container {
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 1fr;
+    column-gap: 10px;
   }
 
   .item-a {
