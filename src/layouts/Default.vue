@@ -1,25 +1,11 @@
 <template>
   <div class="layout">
-    <header class="header">
-      <strong>
-        <h1><g-link to="/">{{ $static.metadata.siteName }}</g-link></h1>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
     <slot/>
+    <footer>
+      <p>©  2020</p>
+    </footer>
   </div>
 </template>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
 
 <style>
 body {
@@ -33,17 +19,5 @@ body {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
 }
 </style>
