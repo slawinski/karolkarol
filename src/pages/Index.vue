@@ -38,7 +38,7 @@ export default {
   },
 
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'This is a blog'
   }
 }
 </script>
