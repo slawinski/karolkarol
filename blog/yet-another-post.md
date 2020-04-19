@@ -1,6 +1,6 @@
 ---
 title: Yet another post
-draft: true
+draft: false
 date: 2020-04-18T21:08:00.219Z
 ---
 Ciekawe czy działa dodawanie obrazków...
