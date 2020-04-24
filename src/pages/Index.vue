@@ -3,7 +3,8 @@
     <header class="header">
       <h1><g-link to="/">{{ $static.metadata.siteName }}</g-link></h1>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
+        <g-link class="nav__link" to="/">Blog</g-link>
+        <g-link class="nav__link" to="/shop">Shop</g-link>
         <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
     </header>
@@ -38,11 +39,11 @@ query {
 </page-query>
 
 <static-query>
-  query {
+query {
   metadata {
-  siteName
+    siteName
   }
-  }
+}
 </static-query>
 
 <script>
