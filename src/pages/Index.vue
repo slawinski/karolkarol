@@ -1,16 +1,16 @@
 <template>
   <Layout>
     <header class="header">
-      <h1><g-link to="/">{{ $static.metadata.siteName }}</g-link></h1>
+      <h1>{{ $static.metadata.siteName }}</h1>
       <nav class="nav">
         <g-link class="nav__link" to="/">Blog</g-link>
-        <g-link class="nav__link" to="/shop">Shop</g-link>
+        <g-link class="nav__link" to="https://www.vinted.pl/member/2794043-rockhead">Shop</g-link>
         <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
     </header>
 
     <div class="container">
-      <g-image class="item-a" alt="Example image" src="http://placekitten.com/100/100" width="135" />
+      <g-image class="item-a" alt="Example image" src="~/assets/karo.jpg" width="135" />
       <p class="item-b">Blog osobisty Karola</p>
       <p class="item-c"><em>Nie karoluj mi tu teraz!</em></p>
     </div>
