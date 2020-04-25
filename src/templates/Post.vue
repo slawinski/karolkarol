@@ -1,10 +1,10 @@
 <template>
-  <Layout>
+  <PostLayout>
     <br />
     <g-link to="/" class="link">  &larr; Go Back</g-link>
     <h1 v-html="$page.post.title" />
     <div v-html="$page.post.content"/>
-  </Layout>
+  </PostLayout>
 </template>
 
 <page-query>
@@ -17,7 +17,13 @@ query Post ($path: String!) {
 </page-query>
 
 <script>
+  import PostLayout from '~/layouts/PostLayout.vue';
+
   export default {
+    components: {
+      PostLayout
+    },
+
     metaInfo() {
       return {
         title: this.$page.post.title

@@ -1,14 +1,5 @@
 <template>
   <Layout>
-    <header class="header">
-      <h1>{{ $static.metadata.siteName }}</h1>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Blog</g-link>
-        <g-link class="nav__link" to="https://www.vinted.pl/member/2794043-rockhead">Shop</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
-
     <div class="container">
       <g-image class="item-a" alt="Example image" src="~/assets/karo.jpg" width="135" />
       <p class="item-b">Blog osobisty Karola</p>
@@ -37,14 +28,6 @@ query {
   }
 }
 </page-query>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
 
 <script>
   import PostList from "~/components/PostList";
