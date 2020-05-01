@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <DefaultLayout>
     <div class="container">
       <g-image class="item-a" alt="Example image" src="~/assets/karo.jpg" width="135" />
       <p class="item-b">Blog osobisty Karola</p>
@@ -10,7 +10,7 @@
       <PostList v-for="edge in $page.allPost.edges" :key="edge.node.id" :post="edge.node" />
     </section>
 
-  </Layout>
+  </DefaultLayout>
 </template>
 
 <page-query>
@@ -46,18 +46,6 @@ export default {
 <style>
 .home-links a {
   margin-right: 1rem;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
 }
 
 .container {

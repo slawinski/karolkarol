@@ -1,10 +1,10 @@
 <template>
-  <PostLayout>
+  <DefaultLayout>
     <br />
     <g-link to="/" class="link">  &larr; Go Back</g-link>
     <h1 v-html="$page.post.title" />
     <div v-html="$page.post.content"/>
-  </PostLayout>
+  </DefaultLayout>
 </template>
 
 <page-query>

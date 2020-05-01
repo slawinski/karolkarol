@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <header class="header">
-      <h1>{{ $static.metadata.siteName }}</h1>
+      <h2>{{ $static.metadata.siteName }}</h2>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
         <g-link class="nav__link" to="https://www.vinted.pl/member/2794043-rockhead">Shop</g-link>
@@ -41,5 +41,16 @@ p {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.nav__link {
+  margin-left: 20px;
 }
 </style>
