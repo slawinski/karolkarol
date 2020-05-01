@@ -1,12 +1,14 @@
 <template>
   <DefaultLayout>
-    <div class="container">
-      <g-image class="item-a" alt="Example image" src="~/assets/karo.jpg" width="135" />
-      <p class="item-b">Blog osobisty Karola</p>
-      <p class="item-c"><em>Nie karoluj mi tu teraz!</em></p>
+    <div class="pb-10 flex items-center">
+      <g-image class="rounded-full" alt="Example image" src="~/assets/karo.jpg" width="135" />
+      <div class="pl-5">
+        <p class="py-2">Blog osobisty Karola</p>
+        <p class="py-2"><em>Nie karoluj mi tu teraz!</em></p>
+      </div>
     </div>
 
-    <section class="posts">
+    <section>
       <PostList v-for="edge in $page.allPost.edges" :key="edge.node.id" :post="edge.node" />
     </section>
 
@@ -42,37 +44,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 1fr;
-  column-gap: 10px;
-}
-
-.item-a {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
-
-.item-b {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-
-.item-c {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-</style>
