@@ -1,9 +1,10 @@
 <template>
   <DefaultLayout>
-    <br />
-    <g-link to="/" class="link">  &larr; Go Back</g-link>
-    <h1 v-html="$page.post.title" />
-    <div v-html="$page.post.content"/>
+    <div>
+      <g-link to="/" class="link">  &larr; Go Back</g-link>
+      <h1 class="font-serif font-black text-5xl" v-html="$page.post.title" />
+      <div class="py-4 markdown" v-html="$page.post.content"/>
+    </div>
   </DefaultLayout>
 </template>
 
@@ -31,3 +32,108 @@ query Post ($path: String!) {
     }
   };
 </script>
+
+<style>
+  /* Additional vertical padding used by kbd tag. */
+  .py-05 {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+  }
+
+  .markdown {
+    @apply text-gray-900 leading-normal break-words;
+  }
+
+  .markdown > * + * {
+    @apply mt-0 mb-4;
+  }
+
+  .markdown li + li {
+    @apply mt-1;
+  }
+
+  .markdown li > p + p {
+    @apply mt-6;
+  }
+
+  .markdown strong {
+    @apply font-semibold;
+  }
+
+  .markdown a {
+    @apply text-blue-600 font-semibold;
+  }
+
+  .markdown strong a {
+    @apply font-bold;
+  }
+
+  .markdown h1 {
+    @apply leading-tight font-serif text-4xl font-semibold mb-4 mt-6 pb-2;
+  }
+
+  .markdown h2 {
+    @apply leading-tight font-serif text-2xl font-semibold mb-4 mt-6 pb-2;
+  }
+
+  .markdown h3 {
+    @apply leading-snug font-serif text-lg font-semibold mb-4 mt-6;
+  }
+
+  .markdown h4 {
+    @apply leading-none font-serif text-base font-semibold mb-4 mt-6;
+  }
+
+  .markdown h5 {
+    @apply leading-tight font-serif text-sm font-semibold mb-4 mt-6;
+  }
+
+  .markdown h6 {
+    @apply leading-tight font-serif text-sm font-semibold text-gray-600 mb-4 mt-6;
+  }
+
+  .markdown blockquote {
+    @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
+  }
+
+  .markdown code {
+    @apply font-mono text-sm inline bg-gray-200 rounded px-1 py-05;
+  }
+
+  .markdown pre {
+    @apply bg-gray-100 rounded p-4;
+  }
+
+  .markdown pre code {
+    @apply block bg-transparent p-0 overflow-visible rounded-none;
+  }
+
+  .markdown ul {
+    @apply text-base pl-8 list-disc;
+  }
+
+  .markdown ol {
+    @apply text-base pl-8 list-decimal;
+  }
+
+  .markdown kbd {
+    @apply text-xs inline-block rounded border px-1 py-05 align-middle font-normal font-mono shadow;
+  }
+
+  .markdown table {
+    @apply text-base border-gray-600;
+  }
+
+  .markdown th {
+    @apply border py-1 px-3;
+  }
+
+  .markdown td {
+    @apply border py-1 px-3;
+  }
+
+  /* Override pygments style background color. */
+  .markdown .highlight pre {
+    @apply bg-gray-100 !important;
+  }
+</style>
