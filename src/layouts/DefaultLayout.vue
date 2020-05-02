@@ -1,7 +1,7 @@
 <template>
   <div>
-    <header class="relative sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3">
-      <div class="flex items-center justify-between px-4 py-3 sm:p-0">
+    <header class="pb-5 relative sm:flex sm:justify-between sm:items-center">
+      <div class="flex items-center justify-between sm:p-0">
         <h2 class="font-sans font-black text-2xl pt-3">{{ $static.metadata.siteName }}</h2>
         <div class="sm:hidden">
           <button @click="isOpen = !isOpen" type="button" class="block text-black hover:text-gray-500 focus:outline-none">
