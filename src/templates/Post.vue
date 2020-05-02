@@ -1,7 +1,7 @@
 <template>
   <DefaultLayout>
     <div>
-      <g-link to="/" class="link">  &larr; Go Back</g-link>
+      <g-link to="/" class="inline-block px-4 py-2 neo-button active:neo-button-depressed hover:text-gray-600">  &larr; Go Back</g-link>
       <h1 class="font-serif font-black text-5xl" v-html="$page.post.title" />
       <div class="py-4 markdown" v-html="$page.post.content"/>
     </div>
@@ -34,6 +34,23 @@ query Post ($path: String!) {
 </script>
 
 <style>
+  .neo-button {
+    border-radius: 10px;
+    background: #f8fafc;
+    box-shadow:  3px 3px 6px #d3d5d6,
+    -3px -3px 6px #ffffff;
+  }
+
+  @variants active {
+    .neo-button-depressed {
+      border-radius: 10px;
+      background: #f8fafc;
+      box-shadow: inset 3px 3px 6px #d3d5d6,
+      inset -3px -3px 6px #ffffff;
+    }
+  }
+
+
   /* Additional vertical padding used by kbd tag. */
   .py-05 {
     padding-top: 0.125rem;

@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between sm:p-0">
         <h2 class="font-sans font-black text-2xl pt-3">{{ $static.metadata.siteName }}</h2>
         <div class="sm:hidden">
-          <button @click="isOpen = !isOpen" type="button" class="block text-black hover:text-gray-500 focus:outline-none">
+          <button @click="isOpen = !isOpen" type="button" class="p-2 neo-button active:neo-button-depressed block text-black hover:text-gray-600 focus:outline-none">
             <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
               <path v-if="isOpen" fill-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
               <path v-else fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
@@ -12,10 +12,10 @@
           </button>
         </div>
       </div>
-      <nav :class="isOpen ? 'block' : 'hidden'" class="absolute right-0 w-48 px-2 pt-2 pb-4 bg-white rounded-lg shadow-xl sm:flex sm:p-0 sm:bg-transparent sm:shadow-none">
-        <g-link class=" block px-2 rounded hover:bg-gray-300 underline text-blue-600" to="/">Home</g-link>
-        <g-link class=" mt-1 block px-2 rounded hover:bg-gray-300 underline text-blue-600 sm:mt-0 sm:ml-2" to="https://www.vinted.pl/member/2794043-rockhead">Shop</g-link>
-        <g-link class=" mt-1 block px-2 rounded hover:bg-gray-300 underline text-blue-600 sm:mt-0 sm:ml-2" to="/about/">About</g-link>
+      <nav :class="isOpen ? 'block' : 'hidden'" class="neo-label mt-3 absolute right-0 px-2 pt-2 pb-4 sm:flex sm:p-0 sm:m-0 sm:shadow-none">
+        <g-link class=" block px-2 rounded hover:bg-gray-300 underline text-blue-600 visited:text-purple-600" to="/">Home</g-link>
+        <g-link class=" mt-1 block px-2 rounded hover:bg-gray-300 underline text-blue-600 sm:mt-0 sm:ml-2 visited:text-purple-600" to="https://www.vinted.pl/member/2794043-rockhead">Shop</g-link>
+        <g-link class=" mt-1 block px-2 rounded hover:bg-gray-300 underline text-blue-600 sm:mt-0 sm:ml-2 visited:text-purple-600" to="/about/">About</g-link>
       </nav>
     </header>
 
@@ -44,3 +44,12 @@ query {
     },
   }
 </script>
+
+<style>
+  .neo-label {
+    border-radius: 10px;
+    background: #f8fafc;
+    box-shadow: inset 3px 3px 6px #d3d5d6,
+    inset -3px -3px 6px #ffffff;
+  }
+</style>
