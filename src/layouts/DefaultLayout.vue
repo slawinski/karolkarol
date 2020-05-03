@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header class="mb-3 relative sm:flex sm:justify-between sm:items-center">
+    <header class="my-4 relative sm:flex sm:justify-between sm:items-center">
       <div class="flex items-center justify-between sm:p-0">
-        <h2 class="font-sans font-black text-2xl pt-3">{{ $static.metadata.siteName }}</h2>
+        <h2 class="font-sans font-black text-2xl">{{ $static.metadata.siteName }}</h2>
         <div class="sm:hidden">
           <button @click="isOpen = !isOpen" type="button" :class="isOpen ? 'neo-button-depressed' : 'neo-button'" class="p-2 neo-button active:neo-button-depressed block text-black hover:text-gray-600 focus:outline-none">
             <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -12,10 +12,10 @@
           </button>
         </div>
       </div>
-      <nav :class="isOpen ? 'block' : 'hidden'" class="neo-label mt-3 py-3 absolute right-0 px-5 pb-4 sm:flex sm:p-0 sm:m-0 sm:shadow-none">
-        <g-link class=" block px-2 rounded hover:bg-gray-300 underline text-blue-600 visited:text-purple-600" to="/">Home</g-link>
-        <g-link class=" mt-6 block px-2 rounded hover:bg-gray-300 underline text-blue-600 sm:mt-0 sm:ml-2 visited:text-purple-600" to="https://www.vinted.pl/member/2794043-rockhead">Shop</g-link>
-        <g-link class=" mt-6 block px-2 rounded hover:bg-gray-300 underline text-blue-600 sm:mt-0 sm:ml-2 visited:text-purple-600" to="/about/">About</g-link>
+      <nav :class="isOpen ? 'block' : 'hidden'" class="neo-label mt-4 py-3 absolute right-0 px-5 pb-4 sm:flex sm:p-0 sm:m-0 sm:shadow-none">
+        <g-link class=" block px-2 sm:rounded sm:hover:bg-gray-300 underline text-blue-600 visited:text-purple-600" to="/">Home</g-link>
+        <g-link class=" mt-6 block px-2 sm:rounded sm:hover:bg-gray-300 underline text-blue-600 sm:mt-0 sm:ml-2 visited:text-purple-600" to="https://www.vinted.pl/member/2794043-rockhead">Shop</g-link>
+        <g-link class=" mt-6 block px-2 sm:rounded sm:hover:bg-gray-300 underline text-blue-600 sm:mt-0 sm:ml-2 visited:text-purple-600" to="/about/">About</g-link>
       </nav>
     </header>
 

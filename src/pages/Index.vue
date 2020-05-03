@@ -1,7 +1,7 @@
 <template>
   <DefaultLayout>
-    <div class="pb-10 flex items-center">
-      <g-image class="rounded-full" alt="Example image" src="~/assets/karo.jpg" width="135" />
+    <div class="my-5 flex items-center">
+      <g-image class="rounded-full neo-circle p-1" alt="Example image" src="~/assets/karo.jpg" width="135" />
       <div class="pl-5">
         <p class="py-2">Blog osobisty Karola</p>
         <p class="py-2"><em>Nie karoluj mi tu teraz!</em></p>
@@ -44,3 +44,12 @@ export default {
   }
 }
 </script>
+
+<style>
+  .neo-circle {
+    border-radius: 50px;
+    background: #f8fafc;
+    box-shadow:  3px 3px 6px #d3d5d6,
+    -3px -3px 6px #ffffff;
+  }
+</style>
